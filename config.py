@@ -1,0 +1,5 @@
+password='oldGidra'
+host='localhost'
+port='5432'
+user='posgres'
+db_name='posts'

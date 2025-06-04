@@ -19,9 +19,10 @@ BOT_TOKEN = getenv("BOT_TOKEN")
 
 kbs = [
     [
-        (KeyboardButton(text="ДАА"), KeyboardButton(text="ЕСТЕСВЕННО")),
-        (KeyboardButton(text="нет"))
-    ]
+        KeyboardButton(text="ДАА"), KeyboardButton(text="ЕСТЕСВЕННО"),
+    ],
+    [KeyboardButton(text="нет")
+     ]
 ]
 
 keyboard = ReplyKeyboardMarkup(keyboard=kbs, resize_keyboard=True)
@@ -42,7 +43,6 @@ async def message_handler(message: Message):
         await message.answer("ЕСТЕСТВЕННО НАШ БОТ ЛУЧШИЙ")
 
 
-
 async def main() -> None:
     bot = Bot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     await dp.start_polling(bot)
@@ -51,4 +51,3 @@ async def main() -> None:
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
     asyncio.run(main())
-

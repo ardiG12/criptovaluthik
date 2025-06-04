@@ -19,8 +19,8 @@ BOT_TOKEN = getenv("BOT_TOKEN")
 
 kbs = [
     [
-        KeyboardButton(text="ДАА"), KeyboardButton(text="ЕСТЕСВЕННО"),
-        KeyboardButton(text="нет")
+        (KeyboardButton(text="ДАА"), KeyboardButton(text="ЕСТЕСВЕННО")),
+        (KeyboardButton(text="нет"))
     ]
 ]
 
@@ -36,6 +36,8 @@ async def callback_handler(message: Message):
 async def message_handler(message: Message):
     if message.text == "ДАА":
         await message.answer("И Я ОБОЖАЮ НАШЕГО БОТА")
+    elif message.text == "нет":
+        await message.answer("Тогда иди нахуй")
     else:
         await message.answer("ЕСТЕСТВЕННО НАШ БОТ ЛУЧШИЙ")
 
